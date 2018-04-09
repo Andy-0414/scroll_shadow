@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="UTF-8">
+            <title>Document</title>
+            <style>
+                  body{
+                        margin: 0;
+                        padding: 0;
+                        overflow: scroll;
+                        height: 1000px;
+
+                        background: #EEEEEE;
+                  }
+                  header{
+                        width: 100%;
+                        height: 100px;
+                        position: fixed;
+                        transition: 0.4s;
+                        color: white;
+                  }
+                  header.body-non-scroll{
+                        background: #AAAAAA;
+                  }
+                  header.body-scroll{
+                        box-shadow: 0px 5px 20px grey;
+                        background: #BBBBBB;
+                  }
+                  nav{
+                        position: relative;
+                        width: 80%;
+                        margin-left: auto;
+                        margin-right: auto;
+                  }
+                  h1{
+                        font-size: 3em;
+                        margin-top: 10px;
+                  }
+            </style>
+      </head>
+      <body>
+            <header id="bar" class="body-non-scroll">
+                  <nav>
+                        <h1>Scroll Shadow</h1>
+                  </nav>
+            </header>
+
+      </body>
+      <script>
+            window.addEventListener('scroll',function(){
+                  var bar = document.getElementById("bar");
+                  if(window.scrollY > 0)
+                  {
+                        bar.classList = 'body-scroll';
+                  }
+                  else
+                  {
+                        bar.classList = 'body-non-scroll';
+                  }
+            })
+      </script>
+</html>
